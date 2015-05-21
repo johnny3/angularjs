@@ -6,19 +6,68 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script>
+            angular.module('myApp', [])
+                    .controller('CommentsCtrl', function ($scope) {
+                        $scope.comments = $scope.comments = [
+                            {
+                                "username": "Phillips",
+                                "city": "<Error: You must call a tag with ()>",
+                                "email": "undefined",
+                                "content": "Adipisicing deserunt non cillum sint laborum do elit quis enim proident fugiat sint laborum do. Reprehenderit ipsum magna consequat elit id commodo deserunt et aute incididunt ea. Velit occaecat ea aliqua qui enim duis ad voluptate. Ea non aute commodo elit deserunt irure. Ea nostrud non laborum aliquip."
+                            },
+                            {
+                                "username": "Jo",
+                                "city": "<Error: You must call a tag with ()>",
+                                "email": "undefined",
+                                "content": "Non anim veniam elit consequat aliquip aliquip. Adipisicing occaecat cupidatat consequat sint esse duis deserunt nostrud ad aliquip irure in. Excepteur sunt et dolor laboris pariatur non. Velit minim incididunt in officia consequat ut deserunt id fugiat dolor culpa laboris cillum proident. Magna dolor ex adipisicing reprehenderit nulla."
+                            },
+                            {
+                                "username": "Price",
+                                "city": "<Error: You must call a tag with ()>",
+                                "email": "undefined",
+                                "content": "Elit proident amet magna sint esse. Cillum aute aliqua exercitation enim. Enim non commodo labore enim magna labore ea. Fugiat aliqua nisi voluptate culpa commodo dolor. Enim quis dolor occaecat sit consectetur sint."
+                            },
+                            {
+                                "username": "Mccray",
+                                "city": "<Error: You must call a tag with ()>",
+                                "email": "undefined",
+                                "content": "Dolor est ullamco cupidatat consectetur in tempor sit mollit minim aliqua laboris. Elit laborum eiusmod proident quis et id consequat aliqua qui enim ad velit eu. Irure consectetur ea nulla in eu ea consequat Lorem sit commodo. Ad sint sit anim cillum deserunt amet elit enim cupidatat consequat anim aliqua deserunt. Veniam officia dolore est aliqua ut."
+                            },
+                            {
+                                "username": "Dotson",
+                                "city": "<Error: You must call a tag with ()>",
+                                "email": "undefined",
+                                "content": "Ut veniam laboris nostrud consectetur pariatur. In ullamco incididunt ad elit pariatur mollit minim commodo nisi adipisicing adipisicing esse ex ad. Labore proident in nostrud voluptate exercitation amet adipisicing. Ullamco irure aliqua veniam laboris id et et eu amet duis aliqua sint. Labore in tempor aute dolore mollit qui minim laboris."
+                            },
+                            {
+                                "username": "Weeks",
+                                "city": "<Error: You must call a tag with ()>",
+                                "email": "undefined",
+                                "content": "Dolore nostrud adipisicing deserunt aliqua dolore est proident Lorem tempor anim eiusmod elit esse. Consequat esse qui eiusmod sunt cupidatat incididunt fugiat incididunt exercitation et non. Excepteur non esse eu do ullamco. Pariatur sunt eiusmod esse reprehenderit Lorem pariatur excepteur consequat magna tempor irure. Culpa officia aliquip amet laboris incididunt duis elit tempor culpa cillum Lorem."
+                            },
+                            {
+                                "username": "Sandra",
+                                "city": "<Error: You must call a tag with ()>",
+                                "email": "undefined",
+                                "content": "Dolore sint amet ea nostrud ad velit commodo laboris. Cillum nisi eiusmod laboris laboris tempor aliquip in. Elit exercitation quis commodo ea. Aliqua enim elit cillum esse sunt nisi nostrud. Aute cillum anim ipsum commodo mollit elit."
+                            }
+                        ];
+                    });
+        </script>
     </head>
-    <body ng-app>
-        <input type="text" ng-model="query" />
-        <select ng-model="order">
-            <option value="username">Organiser par nom</option>
-            <option value="content">Organiser par contenu</option>
-        </select>
-        
-        <div ng-init="users=[{username:'Marc', content:'Salut les gens'}, {username:'Jean', content:'Je suis content'}, {username:'John', content:'First'}]">
-            <div ng-repeat="user in users | filter:{content:query} | orderBy:order">
+    <body ng-app="myApp">
+        <div ng-controller="CommentsCtrl" ng-init="query='elit'">
+            <input type="text" ng-model="query" />
+            <select ng-model="order">
+                <option value="username">Organiser par nom</option>
+                <option value="content">Organiser par contenu</option>
+            </select>
+
+            <div ng-repeat="comment in comments| filter:{content:query} | orderBy:order">
                 <p>
-                    <strong>{{ user.username }}</strong><br>
-                    {{ user.content }}
+                    <strong>{{ comment.username}}</strong><br>
+                    {{ comment.content}}
                 </p>
             </div>
         </div>
