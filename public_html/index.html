@@ -18,101 +18,123 @@
 
             });
 
-            app.controller('PostsCtrl', function($scope) {
-                $scope.posts = [
-                    {
-                        "id": 0,
-                        "name": "Lingoage",
-                        "content": "Occaecat minim voluptate aliqua eu mollit esse officia dolore adipisicing non est excepteur nisi. Dolore consectetur qui id labore officia consequat sint reprehenderit aute aliqua et. Culpa aliquip mollit cupidatat qui. Labore labore consectetur mollit labore sint dolor cillum duis ut laboris ex deserunt id consequat. Excepteur quis consectetur anim ut voluptate occaecat esse excepteur cupidatat commodo ullamco et. Voluptate id aliquip nostrud consequat eu laborum mollit ea culpa labore occaecat minim Lorem incididunt.",
-                        "comments": [
-                            {
-                                "username": "Louella",
-                                "city": "Vallonia",
-                                "email": "louellarobertson@lingoage.com",
-                                "content": "Sint in mollit ex sit ea proident commodo sit do eu sunt magna ullamco excepteur. Occaecat reprehenderit ad cupidatat ea pariatur proident culpa dolore ipsum ipsum nostrud. Qui occaecat culpa et ex. Consequat excepteur dolore non ut. Esse est eu consectetur magna proident eu elit veniam magna deserunt."
-                            }
-                        ]
+            app.factory('PostFactory', function() {
+                var factory = {
+                    posts: [
+                        {
+                            "id": 0,
+                            "name": "Lingoage",
+                            "content": "Occaecat minim voluptate aliqua eu mollit esse officia dolore adipisicing non est excepteur nisi. Dolore consectetur qui id labore officia consequat sint reprehenderit aute aliqua et. Culpa aliquip mollit cupidatat qui. Labore labore consectetur mollit labore sint dolor cillum duis ut laboris ex deserunt id consequat. Excepteur quis consectetur anim ut voluptate occaecat esse excepteur cupidatat commodo ullamco et. Voluptate id aliquip nostrud consequat eu laborum mollit ea culpa labore occaecat minim Lorem incididunt.",
+                            "comments": [
+                                {
+                                    "username": "Louella",
+                                    "city": "Vallonia",
+                                    "email": "louellarobertson@lingoage.com",
+                                    "content": "Sint in mollit ex sit ea proident commodo sit do eu sunt magna ullamco excepteur. Occaecat reprehenderit ad cupidatat ea pariatur proident culpa dolore ipsum ipsum nostrud. Qui occaecat culpa et ex. Consequat excepteur dolore non ut. Esse est eu consectetur magna proident eu elit veniam magna deserunt."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 1,
+                            "name": "Hivedom",
+                            "content": "Ullamco veniam in veniam cupidatat exercitation eiusmod esse aute cillum esse minim. Laboris laboris do enim pariatur occaecat ex ut do quis occaecat. Est Lorem cupidatat ea culpa. Fugiat adipisicing veniam do anim culpa deserunt. Aliqua voluptate cupidatat anim nisi ut mollit eu. Voluptate pariatur dolore eu dolor ea irure aliquip in amet.",
+                            "comments": [
+                                {
+                                    "username": "Alana",
+                                    "city": "Byrnedale",
+                                    "email": "alanarobertson@hivedom.com",
+                                    "content": "Nisi et ea do aliqua quis aute nisi qui culpa velit aliquip. Irure id ipsum ipsum ipsum enim aliquip laboris laboris ut exercitation do tempor sit. Adipisicing anim officia duis aliquip velit veniam ut mollit. Ullamco sit minim nulla nostrud do quis ut. Veniam fugiat sunt ipsum commodo proident do laboris cillum sint."
+                                },
+                                {
+                                    "username": "Katina",
+                                    "city": "Lawrence",
+                                    "email": "katinarobertson@hivedom.com",
+                                    "content": "Non pariatur ut officia anim et. Ut est deserunt irure excepteur ea nulla. Elit magna ex qui sint occaecat aliqua sunt sint tempor deserunt voluptate quis culpa. Ea veniam anim occaecat exercitation quis mollit. Nulla ea ea dolor in deserunt elit ut qui esse duis incididunt Lorem aliqua."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Darwinium",
+                            "content": "Ex minim aute velit ad tempor irure Lorem laborum. Voluptate do adipisicing ullamco pariatur incididunt proident culpa nisi officia officia adipisicing in. Cillum dolore in aliqua laborum labore exercitation exercitation anim est consectetur. Dolor do aliquip reprehenderit aute minim minim sint sint labore. Excepteur adipisicing ullamco amet veniam in velit commodo commodo ullamco sint. Anim deserunt quis nisi tempor labore.",
+                            "comments": [
+                                {
+                                    "username": "Eve",
+                                    "city": "Ticonderoga",
+                                    "email": "everobertson@darwinium.com",
+                                    "content": "Adipisicing nostrud irure commodo cillum proident fugiat. Voluptate commodo ex do eu adipisicing labore aute qui. Nisi esse minim nisi eiusmod culpa ad commodo elit velit. Non minim nostrud ipsum ut pariatur proident et non minim id pariatur commodo qui reprehenderit. Laborum in non eu veniam nostrud exercitation fugiat occaecat duis excepteur sint."
+                                },
+                                {
+                                    "username": "Moore",
+                                    "city": "Nile",
+                                    "email": "moorerobertson@darwinium.com",
+                                    "content": "Culpa eu Lorem commodo non minim irure tempor laboris ut proident magna adipisicing. Minim sunt sit labore sint. Nisi ad ad nostrud est cupidatat esse fugiat veniam dolor minim magna proident id. Cillum sit dolor nulla esse culpa culpa non amet anim amet esse deserunt. Cupidatat est excepteur anim ad sunt ex culpa cupidatat exercitation amet."
+                                },
+                                {
+                                    "username": "Christine",
+                                    "city": "Cartwright",
+                                    "email": "christinerobertson@darwinium.com",
+                                    "content": "Eiusmod in proident ut tempor mollit cupidatat et sunt laborum sunt magna esse. Pariatur mollit velit voluptate commodo dolore est laborum id proident eu sint nulla. Consectetur cillum fugiat magna ea Lorem. Esse sunt ea anim aliqua. Ipsum elit veniam in deserunt sint excepteur consequat commodo ullamco pariatur."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "name": "Repetwire",
+                            "content": "Magna laborum quis do esse sint labore consectetur non occaecat et id excepteur pariatur est. Anim tempor eu elit deserunt ex labore Lorem sunt duis mollit eiusmod. Lorem exercitation magna esse minim velit id incididunt aliquip. Et incididunt dolor aute incididunt. Ipsum voluptate dolore magna occaecat incididunt sunt amet velit dolore magna qui. Ullamco ut dolore labore sit nulla et.",
+                            "comments": [
+                                {
+                                    "username": "Norma",
+                                    "city": "Muse",
+                                    "email": "normarobertson@repetwire.com",
+                                    "content": "Ut reprehenderit mollit reprehenderit eiusmod exercitation amet consectetur nulla. Velit sint occaecat deserunt anim qui in elit sit. Quis ea elit ullamco esse qui occaecat anim aliquip labore consequat magna sit duis. Laborum anim excepteur quis exercitation nisi do amet et laboris excepteur dolor commodo consectetur deserunt. Eu consectetur aliquip sint mollit consectetur laboris sunt officia cupidatat elit."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "name": "Recognia",
+                            "content": "Sit adipisicing veniam magna ea in exercitation culpa eu non id exercitation. Est veniam velit ex ullamco adipisicing sunt deserunt do et ad commodo ipsum culpa. Nostrud veniam pariatur sunt laboris magna occaecat occaecat labore tempor. Ad eu ex eu esse dolore. Commodo occaecat enim exercitation minim in ea nisi. Pariatur qui sunt dolor sit nulla reprehenderit.",
+                            "comments": [
+                                {
+                                    "username": "Duffy",
+                                    "city": "Manchester",
+                                    "email": "duffyrobertson@recognia.com",
+                                    "content": "Est velit eu nisi amet. Ipsum do consequat voluptate laboris culpa aliquip. Non id occaecat Lorem commodo sint sunt quis exercitation. Magna laboris dolore voluptate voluptate nulla aute. Velit deserunt ad eu cillum pariatur duis."
+                                },
+                                {
+                                    "username": "Randolph",
+                                    "city": "Babb",
+                                    "email": "randolphrobertson@recognia.com",
+                                    "content": "Non non adipisicing consectetur ut sint sunt nostrud cillum sint. Mollit nulla occaecat nulla aute aute in et consequat fugiat consectetur dolore voluptate. Tempor minim in veniam velit anim ad nulla sit officia exercitation culpa. Duis cillum cupidatat ex esse ipsum officia aute tempor deserunt deserunt. Nulla commodo sint veniam do culpa in deserunt est adipisicing enim consequat anim sunt."
+                                }
+                            ]
+                        }
+                    ],
+                    getPosts: function() {
+                        return factory.posts;
                     },
-                    {
-                        "id": 1,
-                        "name": "Hivedom",
-                        "content": "Ullamco veniam in veniam cupidatat exercitation eiusmod esse aute cillum esse minim. Laboris laboris do enim pariatur occaecat ex ut do quis occaecat. Est Lorem cupidatat ea culpa. Fugiat adipisicing veniam do anim culpa deserunt. Aliqua voluptate cupidatat anim nisi ut mollit eu. Voluptate pariatur dolore eu dolor ea irure aliquip in amet.",
-                        "comments": [
-                            {
-                                "username": "Alana",
-                                "city": "Byrnedale",
-                                "email": "alanarobertson@hivedom.com",
-                                "content": "Nisi et ea do aliqua quis aute nisi qui culpa velit aliquip. Irure id ipsum ipsum ipsum enim aliquip laboris laboris ut exercitation do tempor sit. Adipisicing anim officia duis aliquip velit veniam ut mollit. Ullamco sit minim nulla nostrud do quis ut. Veniam fugiat sunt ipsum commodo proident do laboris cillum sint."
-                            },
-                            {
-                                "username": "Katina",
-                                "city": "Lawrence",
-                                "email": "katinarobertson@hivedom.com",
-                                "content": "Non pariatur ut officia anim et. Ut est deserunt irure excepteur ea nulla. Elit magna ex qui sint occaecat aliqua sunt sint tempor deserunt voluptate quis culpa. Ea veniam anim occaecat exercitation quis mollit. Nulla ea ea dolor in deserunt elit ut qui esse duis incididunt Lorem aliqua."
+                    getPost: function(id) {
+                        var post = {};
+                        angular.forEach(factory.posts, function(value, key) {
+                            if (value.id === id) {
+                                post = value;
                             }
-                        ]
-                    },
-                    {
-                        "id": 2,
-                        "name": "Darwinium",
-                        "content": "Ex minim aute velit ad tempor irure Lorem laborum. Voluptate do adipisicing ullamco pariatur incididunt proident culpa nisi officia officia adipisicing in. Cillum dolore in aliqua laborum labore exercitation exercitation anim est consectetur. Dolor do aliquip reprehenderit aute minim minim sint sint labore. Excepteur adipisicing ullamco amet veniam in velit commodo commodo ullamco sint. Anim deserunt quis nisi tempor labore.",
-                        "comments": [
-                            {
-                                "username": "Eve",
-                                "city": "Ticonderoga",
-                                "email": "everobertson@darwinium.com",
-                                "content": "Adipisicing nostrud irure commodo cillum proident fugiat. Voluptate commodo ex do eu adipisicing labore aute qui. Nisi esse minim nisi eiusmod culpa ad commodo elit velit. Non minim nostrud ipsum ut pariatur proident et non minim id pariatur commodo qui reprehenderit. Laborum in non eu veniam nostrud exercitation fugiat occaecat duis excepteur sint."
-                            },
-                            {
-                                "username": "Moore",
-                                "city": "Nile",
-                                "email": "moorerobertson@darwinium.com",
-                                "content": "Culpa eu Lorem commodo non minim irure tempor laboris ut proident magna adipisicing. Minim sunt sit labore sint. Nisi ad ad nostrud est cupidatat esse fugiat veniam dolor minim magna proident id. Cillum sit dolor nulla esse culpa culpa non amet anim amet esse deserunt. Cupidatat est excepteur anim ad sunt ex culpa cupidatat exercitation amet."
-                            },
-                            {
-                                "username": "Christine",
-                                "city": "Cartwright",
-                                "email": "christinerobertson@darwinium.com",
-                                "content": "Eiusmod in proident ut tempor mollit cupidatat et sunt laborum sunt magna esse. Pariatur mollit velit voluptate commodo dolore est laborum id proident eu sint nulla. Consectetur cillum fugiat magna ea Lorem. Esse sunt ea anim aliqua. Ipsum elit veniam in deserunt sint excepteur consequat commodo ullamco pariatur."
-                            }
-                        ]
-                    },
-                    {
-                        "id": 3,
-                        "name": "Repetwire",
-                        "content": "Magna laborum quis do esse sint labore consectetur non occaecat et id excepteur pariatur est. Anim tempor eu elit deserunt ex labore Lorem sunt duis mollit eiusmod. Lorem exercitation magna esse minim velit id incididunt aliquip. Et incididunt dolor aute incididunt. Ipsum voluptate dolore magna occaecat incididunt sunt amet velit dolore magna qui. Ullamco ut dolore labore sit nulla et.",
-                        "comments": [
-                            {
-                                "username": "Norma",
-                                "city": "Muse",
-                                "email": "normarobertson@repetwire.com",
-                                "content": "Ut reprehenderit mollit reprehenderit eiusmod exercitation amet consectetur nulla. Velit sint occaecat deserunt anim qui in elit sit. Quis ea elit ullamco esse qui occaecat anim aliquip labore consequat magna sit duis. Laborum anim excepteur quis exercitation nisi do amet et laboris excepteur dolor commodo consectetur deserunt. Eu consectetur aliquip sint mollit consectetur laboris sunt officia cupidatat elit."
-                            }
-                        ]
-                    },
-                    {
-                        "id": 4,
-                        "name": "Recognia",
-                        "content": "Sit adipisicing veniam magna ea in exercitation culpa eu non id exercitation. Est veniam velit ex ullamco adipisicing sunt deserunt do et ad commodo ipsum culpa. Nostrud veniam pariatur sunt laboris magna occaecat occaecat labore tempor. Ad eu ex eu esse dolore. Commodo occaecat enim exercitation minim in ea nisi. Pariatur qui sunt dolor sit nulla reprehenderit.",
-                        "comments": [
-                            {
-                                "username": "Duffy",
-                                "city": "Manchester",
-                                "email": "duffyrobertson@recognia.com",
-                                "content": "Est velit eu nisi amet. Ipsum do consequat voluptate laboris culpa aliquip. Non id occaecat Lorem commodo sint sunt quis exercitation. Magna laboris dolore voluptate voluptate nulla aute. Velit deserunt ad eu cillum pariatur duis."
-                            },
-                            {
-                                "username": "Randolph",
-                                "city": "Babb",
-                                "email": "randolphrobertson@recognia.com",
-                                "content": "Non non adipisicing consectetur ut sint sunt nostrud cillum sint. Mollit nulla occaecat nulla aute aute in et consequat fugiat consectetur dolore voluptate. Tempor minim in veniam velit anim ad nulla sit officia exercitation culpa. Duis cillum cupidatat ex esse ipsum officia aute tempor deserunt deserunt. Nulla commodo sint veniam do culpa in deserunt est adipisicing enim consequat anim sunt."
-                            }
-                        ]
+                        });
+                        return post;
                     }
-                ];
+                }
+                return factory;
             });
 
-            app.controller('CommentsCtrl', function($scope) {
+            app.controller('PostsCtrl', function($scope, PostFactory) {
+                $scope.posts = PostFactory.getPosts();
+            });
+
+            app.controller('CommentsCtrl', function($scope, PostFactory, $routeParams) {
+                var post = PostFactory.getPost(parseInt($routeParams.id, 10));
+                $scope.title = post.name;
+                $scope.comments = post.comments;
             });
         </script>
     </head>
