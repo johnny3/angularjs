@@ -9,11 +9,15 @@
     <option value="content">Organiser par contenu</option>
 </select>
 
-<h1>{{ title }}</h1>
+<h1>{{ title}}</h1>
 
-<div ng-repeat="comment in comments| filter:{content:query} | orderBy:order">
-    <p>
-        <strong>{{ comment.username}}</strong><br>
-        {{ comment.content}}
-    </p>
+<div ng-show="loading">Chargement ...</div>
+
+<div ng-hide="loading">
+    <div ng-repeat="comment in comments| filter:{content:query} | orderBy:order">
+        <p>
+            <strong>{{ comment.username}}</strong><br>
+            {{ comment.content}}
+        </p>
+    </div>
 </div>
